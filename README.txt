@@ -2,9 +2,9 @@
 * Author: Edu Feitosa
 * email: edu.feitosa@outlook.com
 *
-* Os aplicativos desenvolvidos e armazenados neste repositório e um mero objeto de estudos. As
-* informações apresentadas nos aplicativos foram extraídas de sites da internet cujo contúdo é
-* de domínio público, respeitando toda legislação vigente relacionadas ao lencenciamento de 
-* software e a propragação de seu conteúdo.
+* Os aplicativos desenvolvidos e armazenados neste repositÃ³rio sÃ£o meros objetos de estudos. As
+* informaÃ§Ãµes apresentadas nos aplicativos foram extraÃ­das de sites da internet cujo contÃºdo Ã©
+* de domÃ­nio pÃºblico, respeitando toda legislaÃ§Ã£o vigente relacionadas ao lencenciamento de 
+* software e a propragaÃ§Ã£o de seu conteÃºdo bem como direiros autorais.
 *
 **********************************************************************************************/

@@ -3,13 +3,16 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
-using Core;
+using Functions.Core;
+using Android.Content;
+using System.Collections.Generic;
 
 namespace PhoneWord
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        static readonly List<string> phoneNumbers = new List<string>();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -20,6 +23,7 @@ namespace PhoneWord
             EditText phoneNumberText = (EditText)FindViewById(Resource.Id.PhoneNumberText);
             TextView translatedPhoneWord = (TextView)FindViewById(Resource.Id.TranslatePhoneWord);
             Button translateButton = (Button)FindViewById(Resource.Id.TranslateButton);
+            Button translateHistory = FindViewById<Button>(Resource.Id.TranslationHistory);
 
             translateButton.Click += (sender, e) =>
             {
@@ -28,7 +32,18 @@ namespace PhoneWord
                 if (string.IsNullOrWhiteSpace(translatedNumber))
                     translatedPhoneWord.Text = string.Empty;
                 else
+                {
                     translatedPhoneWord.Text = translatedNumber;
+                    phoneNumbers.Add(translatedNumber);
+                }
+            };
+
+            translateHistory.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(TranslationHistoryActivity));
+                intent.PutStringArrayListExtra("phone_numbers", phoneNumbers);
+
+                StartActivity(intent);
             };
         }
 
